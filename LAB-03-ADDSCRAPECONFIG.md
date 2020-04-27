@@ -1,4 +1,4 @@
-# Lab 04: Add a scrape configuration for prometheus
+# Lab 03: Add a scrape configuration for prometheus
 
 Now that our node_exporter is up and running let's configure prometheus to get it metrics by update the prometheus configuration
 

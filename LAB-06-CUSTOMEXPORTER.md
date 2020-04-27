@@ -141,7 +141,7 @@ scrape_configs:
   - job_name: 'My Exporter'
     file_sd_configs:
       - files:
-         - custom-exporter.yml
+         - custom-targets.yml
 ```
 
 - Restart the prometheus container and apply the new configuration

@@ -254,7 +254,13 @@ nano ~/monitoring-lab/docker-compose.yml
     networks:
      - "monitoring"
 ```
-
+- (The the "alertmanager_data" volume section):
+```
+volumes:
+  prometheus_data:
+  grafana_data:
+  alertmanager_data:
+```
 - Deploy node_exporter using docker compose by run
 
 ```

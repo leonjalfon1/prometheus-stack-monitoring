@@ -37,6 +37,13 @@ nano ~/monitoring-lab/docker-compose.yml
       - GF_SECURITY_ADMIN_PASSWORD=admin
 ```
 
+- (The the "grafana_data" volume section):
+```
+volumes:
+  prometheus_data:
+  grafana_data:
+```
+
 - Deploy Grafana using docker compose by run
 
 ```

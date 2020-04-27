@@ -254,7 +254,7 @@ nano ~/monitoring-lab/docker-compose.yml
     networks:
      - "monitoring"
 ```
-- (The the "alertmanager_data" volume section):
+- (The "alertmanager_data" volume section):
 ```
 volumes:
   prometheus_data:

@@ -30,7 +30,7 @@ mkdir ~/monitoring-lab/alertmanager
 nano ~/monitoring-lab/alertmanager/alertmanager.yml
 ```
 
-- The content of the file should be the below:
+- The content of the file should be the below (set the smtp configuration if you want alertmanager to send emails, for this demo is not required due we just want to test the trigger)
 
 ```
 # Global Configuration
@@ -235,11 +235,11 @@ scrape_configs:
 nano ~/monitoring-lab/docker-compose.yml
 ```
 
-- Add the following service (and the "alertmanager_data" volume):
+- Add the alertmanager service (note that it includes a volume named "alertmanager_data"):
 
 ```
   alertmanager:
-    image: "prom/alertmanager:v0.20.0"
+    image: "prom/alertmanager:v0.21.0"
     container_name: alertmanager
     restart: unless-stopped
     mem_limit: 4G
@@ -254,14 +254,14 @@ nano ~/monitoring-lab/docker-compose.yml
     networks:
      - "monitoring"
 ```
-- (The "alertmanager_data" volume section):
+- And add the alertmanager volume to the volumes sections at the end of the file:
 ```
 volumes:
   prometheus_data:
   grafana_data:
   alertmanager_data:
 ```
-- Deploy node_exporter using docker compose by run
+- Deploy alertmanager using docker compose by run
 
 ```
 cd ~/monitoring-lab
@@ -302,3 +302,11 @@ http://localhost:9090
 ```
 http://localhost:9093
 ```
+
+- To generate an alert, let's stop the node_exporter container
+
+```
+docker-compose stop node-exporter
+```
+
+- After a minute you will see the alert in the alertmanager portal

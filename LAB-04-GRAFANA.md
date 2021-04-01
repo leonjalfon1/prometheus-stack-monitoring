@@ -16,11 +16,11 @@
 nano ~/monitoring-lab/docker-compose.yml
 ```
 
-- Add the following service (and the "grafana_data" volume):
+- Add the grafana service (note that it includes a volume named "grafana_data"):
 
 ```
   grafana:
-    image: "grafana/grafana:6.7.3"
+    image: "grafana/grafana:7.5.2"
     container_name: grafana
     restart: unless-stopped
     mem_limit: 4G
@@ -37,7 +37,7 @@ nano ~/monitoring-lab/docker-compose.yml
       - GF_SECURITY_ADMIN_PASSWORD=admin
 ```
 
-- (The "grafana_data" volume section):
+- And add the grafana volume to the volumes sections at the end of the file:
 ```
 volumes:
   prometheus_data:
@@ -54,7 +54,7 @@ docker-compose up -d
 
 ## Configure a Prometheus Datasource
 
-- Browse to grafana from your browser
+- Browse to grafana from your browser (can take few minutes to start)
 
 ```
 http://localhost:80

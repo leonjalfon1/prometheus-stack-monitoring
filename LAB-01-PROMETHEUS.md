@@ -59,7 +59,7 @@ nano ~/monitoring-lab/docker-compose.yml
 version: '2.4'
 services:
   prometheus:
-    image: "prom/prometheus:v2.16.0"
+    image: "prom/prometheus:v2.26.0"
     container_name: prometheus
     # REPLACE LOCALHOST WITH THE SERVER IP IF YOU WILL ACCESS IT FROM ANOTHER SERVER
     hostname: localhost

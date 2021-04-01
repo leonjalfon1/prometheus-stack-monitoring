@@ -24,19 +24,19 @@ docker run --rm -it --name node-exporter-test -p 9100:9100 ubuntu:18.04 /bin/bas
 
 ```
 apt update && apt install -y wget
-wget "https://github.com/prometheus/node_exporter/releases/download/v0.18.1/node_exporter-0.18.1.linux-amd64.tar.gz"
+wget "https://github.com/prometheus/node_exporter/releases/download/v1.1.2/node_exporter-1.1.2.linux-amd64.tar.gz"
 ```
 
 - Unpack the tarball
 
 ```
-tar -xvf node_exporter-0.18.1.linux-amd64.tar.gz
+tar -xvf node_exporter-1.1.2.linux-amd64.tar.gz
 ```
 
 - Move the node export binary to /usr/local/bin
 
 ```
-mv node_exporter-0.18.1.linux-amd64/node_exporter /usr/local/bin/
+mv node_exporter-1.1.2.linux-amd64/node_exporter /usr/local/bin/
 ```
 
 - Run node_exporter manually
@@ -72,7 +72,7 @@ nano ~/monitoring-lab/docker-compose.yml
 
 ```
   node-exporter:
-    image: prom/node-exporter:v0.18.1
+    image: prom/node-exporter:v1.1.2
     container_name: nodeexporter
     user: root
     privileged: true
